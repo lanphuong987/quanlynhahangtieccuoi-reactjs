@@ -1,6 +1,5 @@
 ﻿import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './CSS/Body.css';
+import style from '../CSS/Body.css';
 class Contact extends React.Component {
     render() {
         return (
@@ -15,11 +14,11 @@ class Contact extends React.Component {
 								<tbody>
 									<tr>
 										<td width="120px">Địa Chỉ</td>
-											<td>:720A Điện Biên Phủ, Phường 22</td>
+											<td>: 720A Điện Biên Phủ, Phường 22</td>
 									</tr>
 									<tr>
 										<td>Điện thoại</td>
-										<td>:0929423644</td>
+										<td>: 0929423644</td>
 									</tr>
 									<tr>
 										<td>Fax</td>
@@ -44,13 +43,13 @@ class Contact extends React.Component {
 								<div className="col-xs-6">
 									<div className="form-group">
 										<label for="hoten">HỌ VÀ TÊN </label>
-										<input type="text" className="form-control" id="hoten" placeholder="Nhập họ và tên..." name="s_fullname" required=""/>
+										<input type="text" className=" control" id="hoten" placeholder="Nhập họ và tên..." name="s_fullname" required="" />
 									 </div>
 								</div>
 									<div className="col-xs-6">
 										<div className="form-group">
 											<label for="sodienthoai">SỐ ĐIỆN THOẠI</label>
-											<input type="text" className="form-control" id="sodienthoai" placeholder="Nhập số điện thoại..." name="s_dienthoai" required=""/>
+											<input type="text" className=" control" id="sodienthoai" placeholder="Nhập số điện thoại..." name="s_dienthoai" required=""/>
 	            						</div>
 									</div>
 							</div>
@@ -58,22 +57,22 @@ class Contact extends React.Component {
 								<div className="col-xs-6">
 									<div className="form-group">
 										<label for="email">EMAIL</label>
-										<input type="email" className="form-control" id="email" placeholder="Nhập email..." name="s_email" required=""/>
+										<input type="email" className=" control" id="email" placeholder="Nhập email..." name="s_email" required=""/>
 									</div>
 								</div>
 								<div className="col-xs-6">
 									<div className="form-group">
 										<label for="capcha">MÃ CHỐNG SPAM</label>
-										<input type="text" className="form-control" id="capcha" name="s_mabaove" placeholder="Mã chống spam:" required=""/>
+										<input type="text" className=" control" id="capcha" name="s_mabaove" placeholder="Mã chống spam:" required=""/>
 										<span className="capcha">557506</span>
 									</div>
 								</div>
 							</div>
 							<div className="form-group">
 								<label for="message">Nội dung</label>
-								<textarea name="s_message" className="form-control" placeholder="Nhập nội dung..." id="message" required=""></textarea>
+								<textarea name="s_message" className=" control" placeholder="Nhập nội dung..." id="message" required=""></textarea>
 							</div>
-							<button type="submit" className="btn btn-main center">Gửi đi</button>
+							<button type="submit" className=" btn-main center">Gửi đi</button>
 								<input name="sm_link" type="hidden" value="riversidepalace.vn/lien-he.html"/>
 								<input name="s_mabaovehidden" type="hidden" id="s_mabaovehidden" value="557506"/>
 					</div>

@@ -110,7 +110,7 @@ label {
     float: none;
 }
 
-.form-control {
+.control {
     color: #6f6f6f;
     background-color: #ffffff;
     background-image: none;
@@ -119,12 +119,13 @@ label {
 .contact {
     padding-top: 100px;
     padding-bottom: 100px;
+    background: #FAFAEB
 }
 .titBox:after {
     width: 120px;
 }
 
-.form-control .form-group label {
+.control .form-group label {
     text-transform: uppercase;
     font-size: 14px;
     line-height: 1.4;
@@ -132,7 +133,7 @@ label {
     padding-left: 150px;
 }
 
-.form-control {
+.control {
     outline: none !important;
     box-shadow: none !important;
     font-size: 14px;
@@ -163,15 +164,22 @@ label {
     position: relative;
     margin-bottom: 20px;
 }
-.form-control {
+.control {
     line-height: 1;
+    display: block;
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
 }
-.formBox .form-control {
+.formBox .control {
     padding-left: 0;
     padding-right: 0;
     background-color: none !important;
 }
-.formBox .btn {
+.formBox {
     display: table;
     margin: 30px auto 0 auto;
     cursor: pointer;
@@ -180,7 +188,7 @@ label {
     padding: 0;
     border: none;
 }
-textarea.form-control {
+textarea.control {
     height: 100px;
     padding: 13px 0;
     width:530px;
@@ -194,13 +202,22 @@ textarea.form-control {
     min-width: 120px;
     outline: none !important;
     text-shadow: 0.01em 0 0 #fff;
+    display: table;
+    margin: 30px auto 0 auto;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    padding: 0;
+    border-radius: 2px;
+
 }
 .btn-main:hover {
     opacity: 0.7;
     color: #fff;
     background: #E5CC5F;
     }
-.form-control:focus {
+.control:focus {
     border-color: #E5CC5F !important;
     box-shadow: 0 0 0 0.2rem rgb(239 60 20 / 0.20);
 }
@@ -426,9 +443,39 @@ textarea.form-control {
     }
  /*-----------------------------------CSS Home Page----------------------------------------------*/
 
-.containerHome{
-    max-width:calc(100% - 40px);
-    padding-left:38px;
-    padding-top: 3%;
-    padding-bottom: 9%;
+.containerHome {
+    max-width: 100%;
+    padding: 3% 30px 5% 30px;
+    background-color: #FAFAEB;
+    margin: 2px 10px 2px 10px;
+}
+.titBox {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.titBox .tit {
+    display: table;
+    margin: 0 auto;
+    font-size: 25px;
+    line-height: 1.4;
+    color: #64463C;
+    font-family: "Elle Futura","Helvetica Neue",Arial,sans-serif;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding-top: 15px;
+}
+.tit b {
+    color: #E5CC5F;
+    font-size: inherit;
+    font-family: inherit;
+}
+.containerHome > .row > * {
+    text-align: center;
+}
+.padding {
+   margin-top: 40px;
+}
+.black{
+    background-color: black;
 }

@@ -1,10 +1,9 @@
 import React from 'react';
-import home1 from './static/HPicture1.jpg';
-import home2 from './static/HPicture2.jpg';
-import home3 from './static/HPicture3.jpg';
-import home4 from './static/HPicture4.jpg';
+import home1 from '../static/HPicture1.jpg';
+import home2 from '../static/HPicture2.jpg';
+import home3 from '../static/HPicture3.jpg';
+import home4 from '../static/HPicture4.jpg';
 import AOS from 'aos';
-import './CSS/Header.css';
 class PictureNav extends React.Component {
     componentDidMount() {
         AOS.init({

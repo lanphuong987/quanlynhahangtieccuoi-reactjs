@@ -1,11 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
-    "\\public\\assets",
     "\\src",
     "\\src\\Components",
-    "\\src\\Components\\CSS"
+    "\\src\\Components\\Admin",
+    "\\src\\Components\\Admin\\assets",
+    "\\src\\Components\\Admin\\assets\\css",
+    "\\src\\Components\\Admin\\components",
+    "\\src\\Components\\Admin\\components\\BackgroundColorWrapper",
+    "\\src\\Components\\Admin\\components\\FixedPlugin",
+    "\\src\\Components\\Admin\\components\\Footer"
   ],
+  "SelectedNode": "\\src\\Components\\Admin\\components\\Footer\\Footer.js",
   "PreviewInSolutionExplorer": false
 }

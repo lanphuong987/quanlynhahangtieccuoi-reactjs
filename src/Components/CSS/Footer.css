@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
-body {
+.footer{
 	font-family: 'Rubik', sans-serif;
-	background: #455A64;
+	background: white;
 	height: 100 !important
 }
 
-.container-fluid {
+.footer {
 	overflow: hidden;
 	position:relative;
 	background: #262626;
@@ -38,30 +38,30 @@ h3 {
 .rights {
 	font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
 }
-.logo{
+.logo1{
 	height:300px;
 	width:350px;
 }
-.row{
+.clientRow{
 	margin-right:-50px;
 }
-.container-fluid {
+.footer {
 	background-image:url(../static/footer.jpg)
 }
-footer:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 0;
-	background: url(../static/pattern.png) repeat center center rgba(0,0,0,0.4);
-	pointer-events: none;
-	margin-bottom: 0;
-	padding-bottom: 0;
-}
-.container-fluid > * {
+	.footer:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		background: url(../static/pattern.png) repeat center center rgba(0,0,0,0.4);
+		pointer-events: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+.footer > * {
 	font-weight: 500;
 	color: white;
 }
