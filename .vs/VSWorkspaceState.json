@@ -4,13 +4,12 @@
     "\\src",
     "\\src\\Components",
     "\\src\\Components\\Admin",
-    "\\src\\Components\\Admin\\assets",
-    "\\src\\Components\\Admin\\assets\\css",
-    "\\src\\Components\\Admin\\components",
-    "\\src\\Components\\Admin\\components\\BackgroundColorWrapper",
-    "\\src\\Components\\Admin\\components\\FixedPlugin",
-    "\\src\\Components\\Admin\\components\\Footer"
+    "\\src\\Components\\Admin\\views",
+    "\\src\\Components\\Client",
+    "\\src\\Components\\Client\\Component",
+    "\\src\\Components\\Client\\CSS",
+    "\\src\\Components\\Client\\View"
   ],
-  "SelectedNode": "\\src\\Components\\Admin\\components\\Footer\\Footer.js",
+  "SelectedNode": "\\src\\Components\\Client\\View\\Contact.js",
   "PreviewInSolutionExplorer": false
 }

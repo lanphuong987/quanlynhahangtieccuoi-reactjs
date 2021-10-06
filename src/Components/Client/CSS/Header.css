@@ -1,0 +1,129 @@
+
+.navMenu > * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#root .navMenu {
+    margin-top: 20px;
+    margin-bottom: -40px;
+    top: 0;
+    left: 50%;
+    width: 1264px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 70px;
+    text-align: center;
+    background-image: radial-gradient(circle, #f5101d, #de1e18, #c72515, #b12812, #9c2910);
+    padding-left: 50px;
+    position: fixed;
+    overflow: hidden;
+    -webkit-animation: fadeIn 1s ease backwards;
+    z-index:1000;
+}
+
+    .navMenu a {
+        text-decoration: none;
+        font-size: 0.95em;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: inline-block;
+        width: 110px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        text-align:center;
+        padding-top:8px;
+    }
+
+#root .navMenu a:hover, #root .navMenu a:focus {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+    .navMenu .dot {
+        width: 7px;
+        height: 7px;
+        background: #fb9898;
+        border-radius: 50%;
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        margin-top: 39px;
+        opacity: 0;
+    }
+
+    .navMenu a:nth-child(1):hover ~ .dot {
+        -webkit-transform: translateX(-607px);
+        transform: translateX(-607px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(2):hover ~ .dot {
+        -webkit-transform: translateX(-497px);
+        transform: translateX(-497px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(3):hover ~ .dot {
+        -webkit-transform: translateX(-387px);
+        transform: translateX(-387px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(4):hover ~ .dot {
+        -webkit-transform: translateX(-277px);
+        transform: translateX(-277px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+    .navMenu a:nth-child(5):hover ~ .dot {
+        -webkit-transform: translateX(-167px);
+        transform: translateX(-167px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+    .navMenu a:nth-child(6):hover ~ .dot {
+        -webkit-transform: translateX(-57px);
+        transform: translateX(-57px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+.navbar-light .navbar-brand {
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+    .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+        color: #AC1212;
+        background-color: rgba(255,255,255,0.5);
+    }
+.navbar-light .navbar-brand:hover {
+    color: white;
+}
+.slide {
+    max-height: 530px;
+    min-height:530px;
+    max-width: 100%;
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.carousel-item > img {
+    object-fit: fill;
+}

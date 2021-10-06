@@ -77,22 +77,11 @@
  @import "black-dashboard-react/custom/checkboxes-radio";
  @import "black-dashboard-react/custom/sidebar-and-main-panel.scss";
  @import "black-dashboard-react/custom/misc.scss";
- @import "black-dashboard-react/custom/rtl.scss";
  @import "black-dashboard-react/custom/input-group.scss";
-
-
- // Vendor / Plugins
-
 @import "black-dashboard-react/custom/vendor/plugin-perfect-scrollbar.scss";
-@import "black-dashboard-react/custom/vendor/plugin-react-notification-alert.scss";
-// Cards
-
 @import 'black-dashboard-react/custom/card';
 @import "black-dashboard-react/custom/cards/card-chart";
 @import "black-dashboard-react/custom/cards/card-map";
 @import "black-dashboard-react/custom/cards/card-user";
 @import "black-dashboard-react/custom/cards/card-task";
 @import "black-dashboard-react/custom/cards/card-plain";
-
-// React differences
-@import "black-dashboard-react/react-differences/react-differences";

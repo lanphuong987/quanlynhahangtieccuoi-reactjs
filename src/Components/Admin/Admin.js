@@ -11,15 +11,16 @@ import BackgroundColorWrapper from "./components/BackgroundColorWrapper/Backgrou
 class Admin extends React.Component {
     render() {
         return (
-             <ThemeContextWrapper>
-    <BackgroundColorWrapper>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-          <Redirect from="/admin" to="/admin/dashboard" />
-        </Switch>
-      </BrowserRouter>
-    </BackgroundColorWrapper>
+    <ThemeContextWrapper>
+        <BackgroundColorWrapper>
+          <BrowserRouter>
+            <Switch>
+   
+           <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+              <Redirect from="/admin" to="/admin/dashboard" />
+            </Switch>
+          </BrowserRouter>
+        </BackgroundColorWrapper>
   </ThemeContextWrapper>
         )
     }

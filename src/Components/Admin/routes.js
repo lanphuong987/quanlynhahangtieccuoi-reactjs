@@ -47,14 +47,14 @@ var routes = [
     },
     {
         path: "/icons",
-        name: "Icons",
-        icon: "tim-icons icon-atom",
+        name: "Tạo tài khoản Admin",
+        icon: "tim-icons icon-laptop",
         component: Icons,
         layout: "/admin",
     },
     {
         path: "/map",
-        name: "Map",
+        name: "Bản đồ",
         icon: "tim-icons icon-pin",
         component: Map,
         layout: "/admin",

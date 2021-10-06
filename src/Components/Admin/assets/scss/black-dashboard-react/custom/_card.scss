@@ -1,4 +1,4 @@
-.card{
+#admin .card{
     background: $card-black-background;
     border: 0;
     position: relative;
@@ -218,8 +218,8 @@
     }
 }
 
-.card-body{
-  padding: $card-spacer-y;
+#admin .card-body {
+    padding: $card-spacer-y;
 }
 
 @include media-breakpoint-down(sm) {

@@ -1,12 +1,9 @@
-﻿
-import React from "react";
+﻿import React from "react";
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 import PerfectScrollbar from "perfect-scrollbar";
 import AdminNavbar from "../../components/Navbars/AdminNavbar.js";
 import Sidebar from "../../components/Sidebar/Sidebar.js";
-
 import routes from "../../routes.js";
-
 import logo from "../../../static/logo.png";
 import { BackgroundColorContext } from "../../contexts/BackgroundColorContext";
 
@@ -86,7 +83,7 @@ function Admin(props) {
     <BackgroundColorContext.Consumer>
       {({ color, changeColor }) => (
         <React.Fragment>
-          <div className="wrapper">
+          <div className="wrapper" id = "admin">
             <Sidebar
               routes={routes}
               logo={{

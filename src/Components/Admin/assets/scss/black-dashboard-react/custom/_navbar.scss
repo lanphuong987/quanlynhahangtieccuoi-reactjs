@@ -1,4 +1,4 @@
-.navbar {
+.wrapper .navbar {
     padding: 10px 30px 10px 15px;
     width: 100%;
     z-index: 1050;
@@ -115,35 +115,36 @@
     }
 }
 
-.navbar-minimize-fixed {
-	position: fixed;
-  margin-left: 40px;
-  margin-top: 14px;
-	transition: 0.3s ease;
-	color: white;
-	z-index: 20;
-	opacity: 0;
-	transition: 0.2s ease;
-	button{
-		i {
-			font-size: 20px;
-		}
-	}
+#root .navbar-minimize-fixed {
+    position: fixed;
+    margin-left: 40px;
+    margin-top: 14px;
+    transition: 0.3s ease;
+    color: white;
+    z-index: 20;
+    opacity: 0;
+    transition: 0.2s ease;
+
+    button {
+        i {
+            font-size: 20px;
+        }
+    }
 }
 
-.notification {
-  background: $danger;
-	color: $white;
-	border-radius: $border-radius-xl;
-	height: 6px;
-	width: 6px;
-	position: absolute;
-	text-align: center;
-	font-size: 12px;
-	font-weight: 800;
-  top: 10px;
-  right: 10px;
-	border: 1px solid $danger;
+#root .notification {
+    background: $danger;
+    color: $white;
+    border-radius: $border-radius-xl;
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    top: 10px;
+    right: 10px;
+    border: 1px solid $danger;
 }
 
 .navbar-nav li{
@@ -158,199 +159,203 @@
 }
 
 @media screen and (max-width: 991px){
-  .navbar{
-      .container-fluid{
-          padding-right: 15px;
-          padding-left: 15px;
-      }
-
-      .navbar-collapse{
-        .input-group{
-          margin: 0;
-          margin-top: 5px;
-        }
-      }
-
-      .navbar-nav{
-
-        .btn{
-          margin-left: -3px;
-          display: flex;
-
-          i {
-            margin-right: 12px;
-          }
-
-          span {
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 300;
-
-            &,
-            &:hover,
-            &:focus,
-            &:active,
-            &:active:focus {
-              color: $black !important;
-            }
-          }
+    #root .navbar {
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
         }
 
-          a.nav-link{
-            i{
-              opacity: 1;
-              margin-left: 4px;
-              margin-right: 5px;
+        .navbar-collapse {
+            .input-group {
+                margin: 0;
+                margin-top: 5px;
             }
-            p{
-              display: inline-block;
-              text-transform: uppercase;
-              margin-left: 7px;
+        }
+
+        .navbar-nav {
+
+            .btn {
+                margin-left: -3px;
+                display: flex;
+
+                i {
+                    margin-right: 12px;
+                }
+
+                span {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 300;
+
+                    &,
+                    &:hover,
+                    &:focus,
+                    &:active,
+                    &:active:focus {
+                        color: $black !important;
+                    }
+                }
             }
-          }
 
-          .modal-search .modal-dialog{
-            padding: 0 40px;
-          }
-          .dropdown{
-            margin: 5px 0;
-            .nav-link{
-              padding-bottom: 0;
+            a.nav-link {
+                i {
+                    opacity: 1;
+                    margin-left: 4px;
+                    margin-right: 5px;
+                }
+
+                p {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    margin-left: 7px;
+                }
             }
-            .dropdown-menu{
-              .dropdown-item{
-                margin-top: 0;
-                padding-left: 24px;
-              }
+
+            .modal-search .modal-dialog {
+                padding: 0 40px;
             }
-          }
-      }
 
-      .dropdown.show .dropdown-menu{
-          display: block;
+            .dropdown {
+                margin: 5px 0;
 
-      }
+                .nav-link {
+                    padding-bottom: 0;
+                }
 
-      .dropdown .dropdown-menu{
-          display: none;
-          li a{
-            color: $black;
-          }
-      }
+                .dropdown-menu {
+                    .dropdown-item {
+                        margin-top: 0;
+                        padding-left: 24px;
+                    }
+                }
+            }
+        }
 
-      .dropdown.show .dropdown-menu,
-      .dropdown .dropdown-menu{
-          background-color: transparent;
-          border: 0;
-          transition: none;
-          -webkit-box-shadow: none;
-          box-shadow: none;
-          width: auto;
-          margin: 0px 1rem;
-          margin-top: 0px;
+        .dropdown.show .dropdown-menu {
+            display: block;
+        }
 
-          &:before{
-              display: none;
-          }
-      }
+        .dropdown .dropdown-menu {
+            display: none;
 
-      .dropdown-menu .dropdown-item:focus,
-      .dropdown-menu .dropdown-item:hover{
-          color: $white;
-      }
+            li a {
+                color: $black;
+            }
+        }
 
-      &.bg-white .dropdown-menu .dropdown-item:focus,
-      &.bg-white .dropdown-menu .dropdown-item:hover{
-          color: $default;
-      }
+        .dropdown.show .dropdown-menu,
+        .dropdown .dropdown-menu {
+            background-color: transparent;
+            border: 0;
+            transition: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            width: auto;
+            margin: 0px 1rem;
+            margin-top: 0px;
 
-      button.navbar-toggler[data-target="#navigation"]{
-        padding-top: 0;
-      }
+            &:before {
+                display: none;
+            }
+        }
 
-      .navbar-toggler-bar{
-          display: block;
-          position: relative;
-          width: 22px;
-          height: 1px;
-          border-radius: 1px;
-          background: $white;
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu .dropdown-item:hover {
+            color: $white;
+        }
 
-          &.navbar-kebab{
-            height: 4px;
-            width: 4px;
-            margin-bottom: 3px;
-            border-radius: 50%;
-          }
+        &.bg-white .dropdown-menu .dropdown-item:focus,
+        &.bg-white .dropdown-menu .dropdown-item:hover {
+            color: $default;
+        }
 
-          & + .navbar-toggler-bar{
-              margin-top: 7px;
-          }
+        button.navbar-toggler[data-target="#navigation"] {
+            padding-top: 0;
+        }
 
-          & + .navbar-toggler-bar.navbar-kebab{
-              margin-top: 0px;
-          }
+        .navbar-toggler-bar {
+            display: block;
+            position: relative;
+            width: 22px;
+            height: 1px;
+            border-radius: 1px;
+            background: $white;
 
-          &.bar2{
-              width: 17px;
-              transition: width .2s linear;
-          }
-      }
+            &.navbar-kebab {
+                height: 4px;
+                width: 4px;
+                margin-bottom: 3px;
+                border-radius: 50%;
+            }
 
-      &.bg-white:not(.navbar-transparent) .navbar-toggler-bar{
-          background-color: $default;
-      }
+            & + .navbar-toggler-bar {
+                margin-top: 7px;
+            }
 
-      & .toggled .navbar-toggler-bar{
-          width: 24px;
+            & + .navbar-toggler-bar.navbar-kebab {
+                margin-top: 0px;
+            }
 
-          & + .navbar-toggler-bar{
-              margin-top: 5px;
-          }
-      }
+            &.bar2 {
+                width: 17px;
+                transition: width .2s linear;
+            }
+        }
 
-      .navbar-brand{
-        margin-left: 20px;
-        position: relative;
-      }
-  }
+        &.bg-white:not(.navbar-transparent) .navbar-toggler-bar {
+            background-color: $default;
+        }
 
-  .navbar-nav{
-      .nav-link{
-          i.fa,
-          i.tim-icons{
-              opacity: .5;
-          }
-      }
-  }
+        & .toggled .navbar-toggler-bar {
+            width: 24px;
 
-  .bar1,
-  .bar2,
-  .bar3 {
-    outline: 1px solid transparent;
-  }
-  .bar1 {
-    top: 0px;
-    @include bar-animation($topbar-back);
-  }
-  .bar2 {
-    opacity: 1;
-  }
-  .bar3 {
-    bottom: 0px;
-    @include bar-animation($bottombar-back);
-  }
-  .toggled .bar1 {
-    top: 6px;
-    @include bar-animation($topbar-x);
-  }
-  .toggled .bar2 {
-    opacity: 0;
-  }
-  .toggled .bar3 {
-    bottom: 6px;
-    @include bar-animation($bottombar-x);
-  }
+            & + .navbar-toggler-bar {
+                margin-top: 5px;
+            }
+        }
+
+        .navbar-brand {
+            margin-left: 20px;
+            position: relative;
+        }
+    }
+
+    #root .navbar-nav {
+        .nav-link {
+            i.fa,
+            i.tim-icons {
+                opacity: .5;
+            }
+        }
+    }
+
+    #root .bar1,
+    #root .bar2,
+    #root .bar3 {
+        outline: 1px solid transparent;
+    }
+    #root .bar1 {
+        top: 0px;
+        @include bar-animation($topbar-back);
+    }
+    #root .bar2 {
+        opacity: 1;
+    }
+    #root .bar3 {
+        bottom: 0px;
+        @include bar-animation($bottombar-back);
+    }
+    #root .toggled .bar1 {
+        top: 6px;
+        @include bar-animation($topbar-x);
+    }
+    #root .toggled .bar2 {
+        opacity: 0;
+    }
+    #root .toggled .bar3 {
+        bottom: 6px;
+        @include bar-animation($bottombar-x);
+    }
 
   @include topbar-x-rotation();
   @include topbar-back-rotation();
@@ -373,13 +378,13 @@
 }
 
 @media screen and (min-width: 992px) {
-  .navbar-collapse {
-    background: none !important;
-  }
+    #root .navbar-collapse {
+        background: none !important;
+    }
 
-  .navbar .navbar-toggle {
-    display: none;
-  }
+    #root .navbar .navbar-toggle {
+        display: none;
+    }
 
   .navbar-nav {
     .nav-link {

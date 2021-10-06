@@ -1,29 +1,30 @@
-.btn,
-.navbar .navbar-nav > a.btn{
+#root .btn,
+#root .navbar .navbar-nav > a.btn {
     border-width: $border-thick;
     border: none;
     position: relative;
     overflow: hidden;
-    margin:4px 1px;
+    margin: 4px 1px;
     border-radius: $border-radius-lg;
     cursor: pointer;
 
     @include btn-styles($default, $default-states);
 
     &:hover,
-    &:focus{
+    &:focus {
         @include opacity(1);
         outline: 0 !important;
     }
+
     &:active,
     &.active,
     .open > &.dropdown-toggle {
-         @include box-shadow(none);
-         outline: 0 !important;
+        @include box-shadow(none);
+        outline: 0 !important;
     }
 
-    .badge{
-      margin: 0;
+    .badge {
+        margin: 0;
     }
 
     &.btn-icon {
@@ -37,11 +38,11 @@
         position: relative;
         line-height: normal;
 
-        &.btn-simple{
+        &.btn-simple {
             padding: 0;
         }
 
-        &.btn-sm{
+        &.btn-sm {
             height: $icon-size-sm;
             min-width: $icon-size-sm;
             width: $icon-size-sm;
@@ -49,12 +50,12 @@
             .fa,
             .far,
             .fas,
-            .tim-icons{
+            .tim-icons {
                 font-size: $icon-font-size-sm;
             }
         }
 
-        &.btn-lg{
+        &.btn-lg {
             height: $icon-size-lg;
             min-width: $icon-size-lg;
             width: $icon-size-lg;
@@ -62,7 +63,7 @@
             .fa,
             .far,
             .fas,
-            .tim-icons{
+            .tim-icons {
                 font-size: $icon-font-size-lg;
             }
         }
@@ -70,7 +71,7 @@
         &:not(.btn-footer) .tim-icons,
         &:not(.btn-footer) .fa,
         &:not(.btn-footer) .far,
-        &:not(.btn-footer) .fas{
+        &:not(.btn-footer) .fas {
             position: absolute;
             font-size: 1em;
             top: 50%;
@@ -79,58 +80,61 @@
             line-height: 1.5626rem;
             width: 24px;
         }
-
     }
 
-    &:not(.btn-icon) .tim-icons{
+    &:not(.btn-icon) .tim-icons {
         position: relative;
         top: 1px;
     }
 
-    span{
-      position: relative;
-      display: block;
+    span {
+        position: relative;
+        display: block;
     }
 
-  &.btn-link.dropdown-toggle {
-    color: $dark-gray;
-  }
+    &.btn-link.dropdown-toggle {
+        color: $dark-gray;
+    }
 
-  &.dropdown-toggle:after {
-    margin-left: 30px !important;
-  }
+    &.dropdown-toggle:after {
+        margin-left: 30px !important;
+    }
 }
 
 // Apply the mixin to the buttons
 // .btn-default { @include btn-styles($default-color, $default-states-color); }
-.btn-primary { @include btn-styles($primary, $primary-states);
+#root .btn-primary { @include btn-styles($primary, $primary-states);
 
               }
-.btn-success { @include btn-styles($success, $success-states);
+#root .btn-success {
+    @include btn-styles($success, $success-states);
+}
+#root .btn-info {
+    @include btn-styles($info, $info-states);
+}
+#root .btn-warning {
+    @include btn-styles($warning, $warning-states);
 
-              }
-.btn-info    { @include btn-styles($info, $info-states);
+    &:not(:disabled):not(.disabled):active {
+        color: $white;
+    }
+}
+#root .btn-danger {
+    @include btn-styles($danger, $danger-states);
+}
+#root .btn-neutral {
+    @include btn-styles($white, $white);
+}
 
-              }
-.btn-warning { @include btn-styles($warning, $warning-states);
-                &:not(:disabled):not(.disabled):active{
-                  color: $white;
-                }
-              }
-.btn-danger  { @include btn-styles($danger, $danger-states);
-
-              }
-.btn-neutral { @include btn-styles($white, $white); }
-
-.btn{
-     &:disabled,
-     &[disabled],
-     &.disabled{
+#root .btn {
+    &:disabled,
+    &[disabled],
+    &.disabled {
         @include opacity(.5);
         pointer-events: none;
     }
 }
-.btn-simple{
+#root .btn-simple {
     border: $border;
     border-color: $default;
     box-shadow: none;
@@ -138,8 +142,8 @@
     background-color: $transparent-bg;
 }
 
-.btn-simple,
-.btn-link{
+#root .btn-simple,
+#root .btn-link {
     &.disabled,
     &:disabled,
     &[disabled],
@@ -155,10 +159,10 @@
     }
 }
 
-.btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active{
-  box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+#root .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
+    box-shadow: 2px 2px 6px rgba(0,0,0,.4);
 }
-.btn-link{
+#root .btn-link {
     border: $none;
     box-shadow: none;
     padding: $padding-base-vertical $padding-base-horizontal;
@@ -166,77 +170,77 @@
     color: $gray-300;
     font-weight: $font-weight-bold;
 
-  &:hover {
-    box-shadow: none !important;
-    transform: none !important;
-  }
+    &:hover {
+        box-shadow: none !important;
+        transform: none !important;
+    }
 }
 
-.btn-lg{
-   @include btn-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $border-radius-lg);
+#root .btn-lg {
+    @include btn-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $border-radius-lg);
 }
-.btn-sm{
+#root .btn-sm {
     @include btn-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-base, $border-radius-sm);
 }
 
-.btn-wd {
+#root .btn-wd {
     min-width: 140px;
 }
-.btn-group.select{
+#root .btn-group.select {
     width: 100%;
 }
 
-.btn-group {
-  .btn.active {
-    box-shadow: 2px 2px 6px rgba(0,0,0,.4);
-    transform: translateY(-1px);
-    -webkit-transform: translateY(-1px);
-  }
+#root .btn-group {
+    .btn.active {
+        box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+        transform: translateY(-1px);
+        -webkit-transform: translateY(-1px);
+    }
 }
 
 
-.btn-group.select .btn{
+#root .btn-group.select .btn {
     text-align: left;
 }
-.btn-group.select .caret{
+#root .btn-group.select .caret {
     position: absolute;
     top: 50%;
     margin-top: -1px;
     right: 8px;
 }
 
-.btn-group .btn.active {
+#root .btn-group .btn.active {
     box-shadow: 2px 2px 6px rgba(0,0,0,.4);
     transform: translateY(-1px);
     -webkit-transform: translateY(-1px);
 }
 
-.btn-round{
+#root .btn-round {
     border-width: $border-thin;
     border-radius: $btn-round-radius;
 
-    &.btn-simple{
-        padding: $padding-btn-vertical - 1  $padding-round-horizontal - 1;
+    &.btn-simple {
+        padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
     }
 }
 
-.no-caret {
-  &.dropdown-toggle::after {
-    display: none;
-  }
+#root .no-caret {
+    &.dropdown-toggle::after {
+        display: none;
+    }
 }
 
-.btn-secondary:not(:disabled):not(.disabled):active,
-.btn-secondary:not(:disabled):not(.disabled).active,
+#root .btn-secondary:not(:disabled):not(.disabled):active,
+#root .btn-secondary:not(:disabled):not(.disabled).active,
 .show > .btn-secondary.dropdown-toggle {
     color: $white;
 }
 
-.btn-group label.btn.active {
+#root .btn-group label.btn.active {
     transform: translateY(0);
     -webkit-transform: translateY(0);
 }
 
-.btn + .btn {
-  margin-left: 5px;
+#root .btn + .btn {
+    margin-left: 5px;
 }
