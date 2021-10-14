@@ -10,6 +10,14 @@ export let endpoints = {
     'ServiceCategory': '/ServiceCategory/',
     'ServiceAsCate': (CateId) => `/ServiceCategory/${CateId}/services/`,
     "register": "/User/",
+    'MenuAsId': (Id) => `/Menu/${Id}`,
+    'Service': '/Service/',
+    'ServiceAsId': (Id) => `/Service/${Id}`,
+    'RoomAsId': (Id) => `/WeddingRoom/${Id}`,
+    'Contact': '/Contact/',
+    "oauth2-info": "/oauth2-info/",
+    "login": "/o/token/",
+    "current-user": "/User/current-user/",
 }
 export default axios.create({
     baseURL: 'http://127.0.0.1:8000/',

@@ -20,7 +20,6 @@
     background-image: radial-gradient(circle, #f5101d, #de1e18, #c72515, #b12812, #9c2910);
     padding-left: 50px;
     position: fixed;
-    overflow: hidden;
     -webkit-animation: fadeIn 1s ease backwards;
     z-index:1000;
 }
@@ -38,7 +37,7 @@
         padding-top:8px;
     }
 
-#root .navMenu a:hover, #root .navMenu a:focus {
+#root .navMenu .nav-link:hover, #root .navMenu :focus {
     background-color: rgba(255,255,255,0.1);
     color: white;
 }

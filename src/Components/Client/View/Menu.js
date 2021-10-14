@@ -3,14 +3,17 @@ import API, { endpoints } from '../../../API';
 import ClientCard from '../Component/Card';
 import { Link, Switch, Route } from 'react-router-dom'
 import { useEffect } from 'react';
-import { useLocation } from "react-router"
-import { Button, ButtonGroup, Row } from "react-bootstrap"
+import { useHistory, useLocation } from "react-router"
+import { Button, ButtonGroup} from "react-bootstrap"
+import { Form } from 'reactstrap';
 export default function Menu(props) {
     const [menuCate, setMenuCate] = useState([])
     const [prev, setPrev] = useState(false)
     const [next, setNext] = useState(false)
     const [page, setPage] = useState(1)
     const location = useLocation()
+    const [q, setQ] = useState([])
+    const history = useHistory()
     useEffect(() => {
         const loadMenuCate = async () => {
             try {
@@ -45,12 +48,26 @@ export default function Menu(props) {
     const paging = (inc) => {
         setPage(page + inc)
     }
+    const search = (event) => {
+        event.preventDefault()
+        history.push(`/menu?q=${q}`)
+    }
 
     return (
         <div className="pagewrap clientMenu">
             <div className="proTit" data-aos="fade-up">
                 {menuCate.map(Menu => Menu.isActive = true && <Link to={`/category/${Menu.id}/menu/`}>{Menu.name}</Link>)}
             </div>
+            <Form className="d-flex" onSubmit={search}>
+                <input className="control search"
+                    type="search"
+                    placeholder="Nhập từ tìm kiếm..."
+                    aria-label="Search"
+                    value={q}
+                    onChange={(event) => setQ(event.target.value)}
+                />
+                <Button type="submit" class="btn btn-primary">Tìm kiếm</Button>
+            </Form>
                 {menu.map(Menu => <ClientCard menu={Menu} />)}
                 <ButtonGroup id="button-group">
                     <Button class="btn btn-primary" onClick={() => paging(-1)} disabled={!prev}>Trang trước</Button>

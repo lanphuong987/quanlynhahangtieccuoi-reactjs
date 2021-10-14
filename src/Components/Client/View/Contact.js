@@ -1,6 +1,37 @@
 ﻿import React from 'react';
-class Contact extends React.Component {
-    render() {
+import { useRef, useState, useEffect } from "react";
+import { useHistory } from "react-router"
+import { Form } from 'reactstrap';
+import API, { endpoints } from '../../../API';
+export default function Contact() {
+	const [name, setName] = useState()
+	const [email, setEmail] = useState()
+	const [phone, setPhone] = useState()
+	const [content, setContent] = useState()
+	const history = useHistory()
+	const contact = (event) => {
+		event.preventDefault()
+		let contactPut = async () => {
+			const formData = new FormData()
+			formData.append("name", name)
+			formData.append("email", email)
+			formData.append("content", content)
+			formData.append("phone", phone)
+
+			try {
+				let res = await API.post(endpoints['Contact'], formData, {
+					headers: {
+						"Content-Type": "multipart/form-data"
+					}
+				})
+				console.info(res.data)
+				history.push("/trangchu")
+			} catch (err) {
+				console.error(err)
+			}
+			contactPut();
+		}
+	}
         return (
 			<>
 				<div className="contact">
@@ -36,51 +67,51 @@ class Contact extends React.Component {
 						</div>
 					</div>
 						<div className="c_form" data-aos="fade-up">
-						<div className="titBox"><h2 className="tit">Liên Hệ Với Chúng Tôi</h2></div>
-						<form className="formBox" method="post" name="FormNameContact" id="FormNameContact" accept-charset="utf-8"/>
-							<div className="row">
-								<div className="col-xs-6">
-									<div className="form-group">
-										<label for="hoten">HỌ VÀ TÊN </label>
-										<input type="text" className=" control" id="hoten" placeholder="Nhập họ và tên..." name="s_fullname" required="" />
-									 </div>
-								</div>
+							<div className="titBox"><h2 className="tit">Liên Hệ Với Chúng Tôi</h2></div>
+							<Form className="formBox" onSubmit={contact}>
+								<div className="row">
 									<div className="col-xs-6">
 										<div className="form-group">
-											<label for="sodienthoai">SỐ ĐIỆN THOẠI</label>
-											<input type="text" className=" control" id="sodienthoai" placeholder="Nhập số điện thoại..." name="s_dienthoai" required=""/>
-	            						</div>
+											<label for="name">HỌ VÀ TÊN </label>
+												<input type="text" className=" control" id="name" value={name}
+													onChange={(event) => setName(event.target.value)} placeholder="Nhập họ và tên..." required />
+										 </div>
 									</div>
-							</div>
-							<div className="row">
-								<div className="col-xs-6">
-									<div className="form-group">
-										<label for="email">EMAIL</label>
-										<input type="email" className=" control" id="email" placeholder="Nhập email..." name="s_email" required=""/>
+										<div className="col-xs-6">
+											<div className="form-group">
+												<label for="phone">SỐ ĐIỆN THOẠI</label>
+												<input type="text" className=" control" id="phone" value={phone}
+													onChange={(event) => setPhone(event.target.value)} placeholder="Nhập số điện thoại..." required/>
+	            							</div>
+										</div>
+								</div>
+								<div className="row">
+									<div className="col-xs-6">
+										<div className="form-group">
+											<label for="email">EMAIL</label>
+												<input type="email" className=" control" id="email" value={email}
+													onChange={(event) => setEmail(event.target.value)} placeholder="Nhập email..." required/>
+										</div>
+									</div>
+									<div className="col-xs-6">
+										<div className="form-group">
+											<label for="capcha">MÃ CHỐNG SPAM</label>
+											<input type="text" className=" control" id="capcha" placeholder="Mã chống spam:" required/>
+											<span className="capcha">557506</span>
+										</div>
 									</div>
 								</div>
-								<div className="col-xs-6">
-									<div className="form-group">
-										<label for="capcha">MÃ CHỐNG SPAM</label>
-										<input type="text" className=" control" id="capcha" name="s_mabaove" placeholder="Mã chống spam:" required=""/>
-										<span className="capcha">557506</span>
-									</div>
+								<div className="form-group">
+									<label for="content">NỘI DUNG</label>
+										<textarea className=" control" placeholder="Nhập nội dung..." id="content" required value={content}
+											onChange={(event) => setContent(event.target.value)}></textarea>
 								</div>
-							</div>
-							<div className="form-group">
-								<label for="message">Nội dung</label>
-								<textarea name="s_message" className=" control" placeholder="Nhập nội dung..." id="message" required=""></textarea>
-							</div>
-							<button type="submit" className=" btn-main center" data-aos="fade-up">Gửi đi</button>
-								<input name="sm_link" type="hidden" value="riversidepalace.vn/lien-he.html"/>
-								<input name="s_mabaovehidden" type="hidden" id="s_mabaovehidden" value="557506"/>
+								<button className=" btn-main center" type="submit">Gửi đi</button>
+						</Form>
 					</div>
-					<div className="clr"></div>
 					</div>
 					</div>
             </>
 
         )
-    }
 }
-export default Contact;

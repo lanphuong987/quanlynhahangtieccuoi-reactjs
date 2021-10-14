@@ -5,7 +5,7 @@ export default function ClientCard(props) {
     return (
         <div id="menu">
             <div className="col colmenu" data-aos="fade-up">
-                <Card className="h-100 shadow-sm clientCard" as={Link}>
+                <Card className="h-100 shadow-sm clientCard" as={Link} to={`/category/menu/${props.menu.id}`}>
                     <Card.Img variant="top" src={props.menu.hinh} className="card-img-top"/>
                         <Card.Body>
                             <Card.Title>{props.menu.name}</Card.Title>

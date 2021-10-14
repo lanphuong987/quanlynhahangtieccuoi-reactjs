@@ -8,9 +8,9 @@ export default function WeddingRoomCard(props) {
                         <img class="img-fluid " src={props.room.hinh_chinh_dien} />
                     </div>
                     <div class="col-md-6 order-md-12 order-1" data-aos="fade-up">
-                        <div class="titBox"><Link to="/menu" class="tit"><h2>Sảnh <b>{props.room.name}</b></h2></Link></div>
+                        <div class="titBox"><Link to={`/category/room/${props.room.id}`} class="tit"><h2>Sảnh <b>{props.room.name}</b></h2></Link></div>
                         <p class="padding">{props.room.description}</p>
-                        <Link to="#" class="btn-main center padding">Chi Tiết</Link>
+                        <Link to={`/category/room/${props.room.id}`} class="btn-main center padding">Chi Tiết</Link>
                     </div>
                 </div>
              </div>

@@ -6,7 +6,6 @@ import Sidebar from "../../components/Sidebar/Sidebar.js";
 import routes from "../../routes.js";
 import logo from "../../../static/logo.png";
 import { BackgroundColorContext } from "../../contexts/BackgroundColorContext";
-
 var ps;
 
 function Admin(props) {
@@ -78,7 +77,8 @@ function Admin(props) {
       }
     }
     return "Brand";
-  };
+    };
+
   return (
     <BackgroundColorContext.Consumer>
       {({ color, changeColor }) => (

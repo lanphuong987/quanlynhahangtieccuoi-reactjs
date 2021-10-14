@@ -1,41 +1,31 @@
 ﻿import { useState } from 'react';
 import API, { endpoints } from '../../../API';
-import { Link} from 'react-router-dom'
+import { useHistory, useParams } from "react-router"
 import { useEffect } from 'react';
-import WeddingRoomCard from '../Component/WeddingRoomCard';
-import { useHistory, useLocation } from "react-router"
-import { Button, ButtonGroup, Row } from "react-bootstrap"
+import { Button, ButtonGroup } from "react-bootstrap"
+import { useLocation } from "react-router"
+import ServiceCard from './ServiceCard';
 import { Form } from 'reactstrap';
-export default function WeddingRoom(props) {
-    const [roomCate, setRoomCate] = useState([])
+export default function ServiceAsCate(props) {
     const [prev, setPrev] = useState(false)
     const [next, setNext] = useState(false)
     const [page, setPage] = useState(1)
     const location = useLocation()
+    const [service, setService] = useState([])
+    const { cate } = useParams()
     const [q, setQ] = useState([])
     const history = useHistory()
+    let cateName = '';
     useEffect(() => {
-        const loadRoomCate = async () => {
-            try {
-                let res = await API.get(endpoints['WeddingRoomType'])
-                setRoomCate(res.data.results)
-            } catch (err) {
-                console.error(err);
-            }
-        }
-        loadRoomCate()
-    }, [])
-    const [room, setRoom] = useState([])
-    useEffect(() => {
-        const loadRoom = async () => {
+        const loadService = async () => {
             let query = location.search
             if (query === "")
                 query = `?page=${page}`
             else
                 query += `&page=${page}`
             try {
-                let res = await API.get(`${endpoints['WeddingRoom']}${query}`)
-                setRoom(res.data.results)
+                let res = await API.get(`${endpoints['ServiceAsCate'](cate)}${query}`)
+                setService(res.data)
 
                 setNext(res.data.next !== null)
                 setPrev(res.data.previous !== null)
@@ -43,19 +33,28 @@ export default function WeddingRoom(props) {
                 console.error(err);
             }
         }
-        loadRoom()
+        loadService()
     }, [location.search, page])
     const paging = (inc) => {
         setPage(page + inc)
     }
+    if (cate == 4)
+        cateName = 'váy cưới'
+    else {
+        if (cate == 3)
+            cateName = 'trang trí'
+        else
+            cateName = 'thuê ca sĩ'
+    }
     const search = (event) => {
         event.preventDefault()
-        history.push(`/sanhcuoi?q=${q}`)
+        history.push(`/category/${cate}/dichvu?q=${q}`)
     }
+
     return (
         <div className="pagewrap clientMenu">
             <div className="proTit" data-aos="fade-up">
-                {roomCate.map(cate => cate.isActive = true && <Link to={`/category/${cate.id}/sanhcuoi/`}>{cate.name}</Link>)}
+                <a>Các sảnh phẩm thuộc mục {cateName}</a>
             </div>
             <Form className="d-flex" onSubmit={search}>
                 <input className="control search"
@@ -67,7 +66,7 @@ export default function WeddingRoom(props) {
                 />
                 <Button type="submit" class="btn btn-primary">Tìm kiếm</Button>
             </Form>
-            {room.map(room => room.isActive = true && <WeddingRoomCard room={ room }/>)}
+            {service.map(Service => Service.isActive = true && <ServiceCard object={Service} />)}
             <ButtonGroup id="button-group">
                 <Button class="btn btn-primary" onClick={() => paging(-1)} disabled={!prev}>Trang trước</Button>
                 <Button class="btn btn-primary" onClick={() => paging(1)} disabled={!next}>Trang sau</Button>
