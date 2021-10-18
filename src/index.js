@@ -7,12 +7,27 @@ import { BrowserRouter} from 'react-router-dom';
 import { createStore } from 'redux';
 import mainReducer from "./Reducer/RootReducer"
 import { Provider } from 'react-redux';
+import { Provider as AlertProvider, transitions } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 const store = createStore(mainReducer)
+const alertOptions = {
+    timeout: 2000,
+    position: 'middle',
+    transition: transitions.SCALE,
+    offset: '30px',
+};
+const alertStyle = {
+    color: "white",
+    backgroundColor: '#ffc107',
+    fontFamily: "Arial",
+};
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <AlertProvider template={AlertTemplate} {...alertOptions}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </AlertProvider>
     </Provider>
         
 , document.getElementById('root')

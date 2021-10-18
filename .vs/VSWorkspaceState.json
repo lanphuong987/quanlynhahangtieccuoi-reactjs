@@ -3,13 +3,11 @@
     "",
     "\\src",
     "\\src\\Components",
-    "\\src\\Components\\Admin",
     "\\src\\Components\\Admin\\views",
     "\\src\\Components\\Client",
-    "\\src\\Components\\Client\\Component",
-    "\\src\\Components\\Client\\CSS",
-    "\\src\\Components\\Client\\View"
+    "\\src\\Components\\Client\\View",
+    "\\src\\Components\\static"
   ],
-  "SelectedNode": "\\src\\Components\\Client\\View\\Contact.js",
+  "SelectedNode": "\\src\\index.js",
   "PreviewInSolutionExplorer": false
 }

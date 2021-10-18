@@ -49,6 +49,13 @@ export default function MenuAsCate(props) {
     const search = (event) => {
         event.preventDefault()
         history.push(`/category/${cate}/menu?q=${q}`)
+        if (menu.length === 0) {
+            alert.show('Hiện tại không có món bạn tìm kiếm', { type: 'error' })
+        }
+        else {
+            alert.show('Tìm kiếm thành công', { type: 'success' })
+        }
+        q = '';
     }
 
     return (

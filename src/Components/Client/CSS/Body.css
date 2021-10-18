@@ -106,6 +106,8 @@ label {
     border-top: solid 5px #E5CC5F;
     position: relative;
     z-index: 2;
+    border-radius: 5px;
+    margin-bottom: 10%;
 }
 .row:after {
     clear: both;
@@ -179,6 +181,9 @@ label {
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
+}
+.form-group span{
+    padding-right: -10px;
 }
 .formBox .control {
     padding-left: 0;

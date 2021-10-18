@@ -6,7 +6,6 @@ import logo from '../../static/logo.png';
 import { useLocation } from 'react-router-dom'
 export default function Footer() {
     let location = useLocation();
-    console.log(location.pathname);
     if (location.pathname.match(/admin/))
     return null;
         else {

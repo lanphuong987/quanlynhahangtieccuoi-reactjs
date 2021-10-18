@@ -8,22 +8,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAdmin, logoutUser } from "../../../LoginUser";
+import { useAlert } from 'react-alert'
 export default function Header() {
     let location = useLocation();
     const user = useSelector(state => state.user.user)
     const admin = useSelector(state => state.admin.admin)
     const dispatch = useDispatch()
+    const alert = useAlert()
     const logout = (event) => {
         event.preventDefault()
         if (user !== null && user !== undefined) {
             cookies.remove("access_token")
             cookies.remove("user")
             dispatch(logoutUser())
+            alert.show('Đăng xuất thành công', { type: 'success' })
         }
         else {
             cookies.remove("access_token")
             cookies.remove("admin")
             dispatch(logoutAdmin())
+            alert.show('Đăng xuất thành công', { type: 'success' })
         }
       
     }

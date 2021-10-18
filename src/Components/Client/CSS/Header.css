@@ -17,11 +17,11 @@
     padding: 0;
     height: 70px;
     text-align: center;
-    background-image: radial-gradient(circle, #f5101d, #de1e18, #c72515, #b12812, #9c2910);
+    background-color: black;
     padding-left: 50px;
     position: fixed;
     -webkit-animation: fadeIn 1s ease backwards;
-    z-index:1000;
+    z-index: 1000;
 }
 
     .navMenu a {
@@ -38,7 +38,7 @@
     }
 
 #root .navMenu .nav-link:hover, #root .navMenu :focus {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,0.4);
     color: white;
 }
 

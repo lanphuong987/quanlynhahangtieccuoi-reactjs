@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useHistory, useLocation } from "react-router"
 import { Button, ButtonGroup} from "react-bootstrap"
 import { Form } from 'reactstrap';
+import { useAlert } from 'react-alert'
 export default function Menu(props) {
     const [menuCate, setMenuCate] = useState([])
     const [prev, setPrev] = useState(false)
@@ -14,6 +15,7 @@ export default function Menu(props) {
     const location = useLocation()
     const [q, setQ] = useState([])
     const history = useHistory()
+    const alert = useAlert()
     useEffect(() => {
         const loadMenuCate = async () => {
             try {
@@ -48,10 +50,18 @@ export default function Menu(props) {
     const paging = (inc) => {
         setPage(page + inc)
     }
-    const search = (event) => {
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+    const search = async (event) => {
         event.preventDefault()
         history.push(`/menu?q=${q}`)
+        if (menu.length === 0) {
+            alert.show('Hiện tại không có món bạn tìm kiếm', { type: 'error' })
+        }
+        else {
+            alert.show('Tìm kiếm thành công', { type: 'success' })
+        }
     }
+
 
     return (
         <div className="pagewrap clientMenu">

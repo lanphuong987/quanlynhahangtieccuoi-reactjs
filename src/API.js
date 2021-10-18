@@ -18,6 +18,7 @@ export let endpoints = {
     "oauth2-info": "/oauth2-info/",
     "login": "/o/token/",
     "current-user": "/User/current-user/",
+    "convert": "/o/convert-token/"
 }
 export default axios.create({
     baseURL: 'http://127.0.0.1:8000/',
